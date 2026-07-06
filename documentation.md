@@ -2,6 +2,9 @@
 
 This document outlines the architecture, data pipeline, individual agent workflows, and business scoring logic for the Peter Lynch Stock Research Analyser.
 
+> [!WARNING]
+> **Disclaimer**: This documentation describes a Proof of Concept (POC) system developed for educational and demonstration purposes. It does not provide real investment recommendations. The stock list is static, and qualitative features are planned for future iterations.
+
 ---
 
 ## 1. System Architecture & Data Flow

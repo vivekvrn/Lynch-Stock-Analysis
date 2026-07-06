@@ -2,6 +2,12 @@
 
 A multi-agent quantitative equity research system built using the **Google Agent Development Kit (ADK)** and the **Model Context Protocol (MCP)**. The platform automatically evaluates NASDAQ stocks against Peter Lynch's core investment principles combined with IT-sector key quality metrics, rendering findings on an interactive web dashboard.
 
+> [!WARNING]
+> **Disclaimer & Project Status**: This project is a Proof of Concept (POC) / prototype demonstration built for **educational purposes only**. It does **not** constitute financial, investment, or legal advice, nor is it a recommendation to buy or sell any security.
+> 
+> * **Future Roadmap**: The stock universe is currently limited and will be expanded in future releases.
+> * **Qualitative Criteria**: More qualitative parameters for fundamental analysis (such as earnings call transcript parsing, management guidance analysis, and macroeconomic indicators) will be added in subsequent phases.
+
 ---
 
 ## 1. System Features
