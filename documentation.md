@@ -3,7 +3,7 @@
 This document outlines the architecture, data pipeline, individual agent workflows, and business scoring logic for the Peter Lynch Stock Research Analyser.
 
 > [!WARNING]
-> **Disclaimer**: This documentation describes a Proof of Concept (POC) system developed for educational and demonstration purposes. It does not provide real investment recommendations. The stock list is static, and qualitative features are planned for future iterations.
+> **Disclaimer**: This documentation describes a Proof of Concept (POC) system developed for educational and demonstration purposes. The quantitative screening framework is based on investment principles derived from Peter Lynch's publicly available books (such as *One Up on Wall Street*). This software is an independent educational tool and is not associated with, sponsored by, or endorsed by Peter Lynch or any associated copyright holders. It does not provide real investment recommendations. The stock list is static, and qualitative features are planned for future iterations.
 
 ---
 

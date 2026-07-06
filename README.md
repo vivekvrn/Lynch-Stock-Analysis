@@ -5,6 +5,7 @@ A multi-agent quantitative equity research system built using the **Google Agent
 > [!WARNING]
 > **Disclaimer & Project Status**: This project is a Proof of Concept (POC) / prototype demonstration built for **educational purposes only**. It does **not** constitute financial, investment, or legal advice, nor is it a recommendation to buy or sell any security.
 > 
+> * **Methodology & Book Attribution**: The quantitative screening framework implemented in this tool is based on the public investment principles and heuristics described in books by Peter Lynch (such as *One Up on Wall Street*). This project is an independent educational implementation of these concepts and is not affiliated with, sponsored by, or endorsed by Peter Lynch or any publishers.
 > * **Future Roadmap**: The stock universe is currently limited and will be expanded in future releases.
 > * **Qualitative Criteria**: More qualitative parameters for fundamental analysis (such as earnings call transcript parsing, management guidance analysis, and macroeconomic indicators) will be added in subsequent phases.
 
