@@ -1,0 +1,130 @@
+{
+  "AAPL": {
+    "symbol": "AAPL",
+    "quant": {
+      "scores": {"peg": 8, "debt_equity": 12, "revenue_growth": 3, "pe_vs_hist": 8, "net_cash": 2, "fcf": 5},
+      "quant_score": 38,
+      "lynch_category": "Slow Grower"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 8, "revenue_trend": 6, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 2},
+      "kpi_score": 26
+    },
+    "composite": {
+      "composite_score": 64,
+      "verdict": "WATCH"
+    }
+  },
+  "MSFT": {
+    "symbol": "MSFT",
+    "quant": {
+      "scores": {"peg": 4, "debt_equity": 12, "revenue_growth": 6, "pe_vs_hist": 8, "net_cash": 2, "fcf": 5},
+      "quant_score": 37,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 12, "revenue_trend": 6, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 32
+    },
+    "composite": {
+      "composite_score": 69,
+      "verdict": "BUY"
+    }
+  },
+  "GOOGL": {
+    "symbol": "GOOGL",
+    "quant": {
+      "scores": {"peg": 8, "debt_equity": 12, "revenue_growth": 6, "pe_vs_hist": 8, "net_cash": 2, "fcf": 5},
+      "quant_score": 41,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 12, "revenue_trend": 10, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 36
+    },
+    "composite": {
+      "composite_score": 77,
+      "verdict": "BUY"
+    }
+  },
+  "AMZN": {
+    "symbol": "AMZN",
+    "quant": {
+      "scores": {"peg": 8, "debt_equity": 9, "revenue_growth": 9, "pe_vs_hist": 8, "net_cash": 0, "fcf": 5},
+      "quant_score": 39,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 8, "revenue_trend": 10, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 32
+    },
+    "composite": {
+      "composite_score": 71,
+      "verdict": "BUY"
+    }
+  },
+  "NVDA": {
+    "symbol": "NVDA",
+    "quant": {
+      "scores": {"peg": 15, "debt_equity": 12, "revenue_growth": 12, "pe_vs_hist": 10, "net_cash": 2, "fcf": 5},
+      "quant_score": 56,
+      "lynch_category": "Fast Grower"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 12, "revenue_trend": 10, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 36
+    },
+    "composite": {
+      "composite_score": 92,
+      "verdict": "STRONG BUY"
+    }
+  },
+  "META": {
+    "symbol": "META",
+    "quant": {
+      "scores": {"peg": 12, "debt_equity": 12, "revenue_growth": 9, "pe_vs_hist": 8, "net_cash": 2, "fcf": 5},
+      "quant_score": 48,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 12, "revenue_trend": 6, "analyst_consensus": 8, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 32
+    },
+    "composite": {
+      "composite_score": 80,
+      "verdict": "STRONG BUY"
+    }
+  },
+  "TSLA": {
+    "symbol": "TSLA",
+    "quant": {
+      "scores": {"peg": 0, "debt_equity": 12, "revenue_growth": 6, "pe_vs_hist": 8, "net_cash": 2, "fcf": 5},
+      "quant_score": 33,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 4, "revenue_trend": 0, "analyst_consensus": 3, "roe_trend": 2, "eps_revision": 2},
+      "kpi_score": 11
+    },
+    "composite": {
+      "composite_score": 44,
+      "verdict": "NEUTRAL"
+    }
+  },
+  "NFLX": {
+    "symbol": "NFLX",
+    "quant": {
+      "scores": {"peg": 8, "debt_equity": 9, "revenue_growth": 9, "pe_vs_hist": 8, "net_cash": 0, "fcf": 5},
+      "quant_score": 39,
+      "lynch_category": "Stalwart"
+    },
+    "kpi": {
+      "scores": {"ebit_margin": 8, "revenue_trend": 6, "analyst_consensus": 6, "roe_trend": 2, "eps_revision": 4},
+      "kpi_score": 26
+    },
+    "composite": {
+      "composite_score": 65,
+      "verdict": "BUY"
+    }
+  }
+}

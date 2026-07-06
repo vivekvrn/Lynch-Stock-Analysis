@@ -1,0 +1,170 @@
+[
+  {
+    "symbol": "AAPL",
+    "current_price": 300.0,
+    "pe_current": 28.5,
+    "pe_5yr_median": 29.516387628781683,
+    "peg_ratio": 1.45,
+    "debt_equity": 0.2111111111111111,
+    "revenue_cagr_5yr": 8.00000000001333,
+    "net_cash_pct_mcap": 3.45,
+    "fcf_conversion": 114.99999999999999,
+    "scores": {
+      "peg": 8,
+      "debt_equity": 12,
+      "revenue_growth": 3,
+      "pe_vs_hist": 8,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 38,
+    "lynch_category": "Slow Grower"
+  },
+  {
+    "symbol": "MSFT",
+    "current_price": 320.0,
+    "pe_current": 32.0,
+    "pe_5yr_median": 33.68918467661857,
+    "peg_ratio": 1.6,
+    "debt_equity": 0.15625,
+    "revenue_cagr_5yr": 12.000000000096867,
+    "net_cash_pct_mcap": 1.890625,
+    "fcf_conversion": 114.99999999999999,
+    "scores": {
+      "peg": 4,
+      "debt_equity": 12,
+      "revenue_growth": 6,
+      "pe_vs_hist": 8,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 37,
+    "lynch_category": "Stalwart"
+  },
+  {
+    "symbol": "GOOGL",
+    "current_price": 200.0,
+    "pe_current": 23.5,
+    "pe_5yr_median": 24.937919754662943,
+    "peg_ratio": 1.1,
+    "debt_equity": 0.09333333333333334,
+    "revenue_cagr_5yr": 14.000000000065072,
+    "net_cash_pct_mcap": 6.260000000000001,
+    "fcf_conversion": 114.99999999810606,
+    "scores": {
+      "peg": 8,
+      "debt_equity": 12,
+      "revenue_growth": 6,
+      "pe_vs_hist": 8,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 41,
+    "lynch_category": "Stalwart"
+  },
+  {
+    "symbol": "AMZN",
+    "current_price": 190.0,
+    "pe_current": 40.0,
+    "pe_5yr_median": 43.10548937229983,
+    "peg_ratio": 1.25,
+    "debt_equity": 0.45614035087719296,
+    "revenue_cagr_5yr": 18.000000000128956,
+    "net_cash_pct_mcap": -1.710526315789474,
+    "fcf_conversion": 114.99999999800639,
+    "scores": {
+      "peg": 8,
+      "debt_equity": 9,
+      "revenue_growth": 9,
+      "pe_vs_hist": 8,
+      "net_cash": 0,
+      "fcf": 5
+    },
+    "quant_score": 39,
+    "lynch_category": "Stalwart"
+  },
+  {
+    "symbol": "NVDA",
+    "current_price": 280.0,
+    "pe_current": 65.0,
+    "pe_5yr_median": 76.65479660787145,
+    "peg_ratio": 0.45,
+    "debt_equity": 0.02619047619047619,
+    "revenue_cagr_5yr": 45.00000000019422,
+    "net_cash_pct_mcap": 1.1928571428571428,
+    "fcf_conversion": 114.99999999999999,
+    "scores": {
+      "peg": 15,
+      "debt_equity": 12,
+      "revenue_growth": 12,
+      "pe_vs_hist": 10,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 56,
+    "lynch_category": "Fast Grower"
+  },
+  {
+    "symbol": "META",
+    "current_price": 120.0,
+    "pe_current": 24.0,
+    "pe_5yr_median": 25.667387591584355,
+    "peg_ratio": 0.95,
+    "debt_equity": 0.1,
+    "revenue_cagr_5yr": 16.000000000218307,
+    "net_cash_pct_mcap": 5.391666666666667,
+    "fcf_conversion": 114.99999999999999,
+    "scores": {
+      "peg": 12,
+      "debt_equity": 12,
+      "revenue_growth": 9,
+      "pe_vs_hist": 8,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 48,
+    "lynch_category": "Stalwart"
+  },
+  {
+    "symbol": "TSLA",
+    "current_price": 60.0,
+    "pe_current": 55.0,
+    "pe_5yr_median": 57.43602333934325,
+    "peg_ratio": 2.2,
+    "debt_equity": 0.05555555555555555,
+    "revenue_cagr_5yr": 10.000000000127528,
+    "net_cash_pct_mcap": 4.716666666666667,
+    "fcf_conversion": 114.99999999999999,
+    "scores": {
+      "peg": 0,
+      "debt_equity": 12,
+      "revenue_growth": 6,
+      "pe_vs_hist": 8,
+      "net_cash": 2,
+      "fcf": 5
+    },
+    "quant_score": 33,
+    "lynch_category": "Stalwart"
+  },
+  {
+    "symbol": "NFLX",
+    "current_price": 27.0,
+    "pe_current": 36.0,
+    "pe_5yr_median": 38.355414526699164,
+    "peg_ratio": 1.15,
+    "debt_equity": 0.345679012345679,
+    "revenue_cagr_5yr": 15.000000000948898,
+    "net_cash_pct_mcap": -2.3333333333333335,
+    "fcf_conversion": 114.99999998597082,
+    "scores": {
+      "peg": 8,
+      "debt_equity": 9,
+      "revenue_growth": 9,
+      "pe_vs_hist": 8,
+      "net_cash": 0,
+      "fcf": 5
+    },
+    "quant_score": 39,
+    "lynch_category": "Stalwart"
+  }
+]

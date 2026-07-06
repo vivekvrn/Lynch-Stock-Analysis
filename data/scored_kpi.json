@@ -1,0 +1,146 @@
+[
+  {
+    "symbol": "GOOGL",
+    "ebit_margin_trend": "expanding",
+    "revenue_trend": "accel",
+    "analyst_buy_pct": 78.6,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 12,
+      "revenue_trend": 10,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 36,
+    "kpi_score_pct": 90.0
+  },
+  {
+    "symbol": "NVDA",
+    "ebit_margin_trend": "expanding",
+    "revenue_trend": "accel",
+    "analyst_buy_pct": 93.8,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 12,
+      "revenue_trend": 10,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 36,
+    "kpi_score_pct": 90.0
+  },
+  {
+    "symbol": "MSFT",
+    "ebit_margin_trend": "expanding",
+    "revenue_trend": "stable",
+    "analyst_buy_pct": 83.5,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 12,
+      "revenue_trend": 6,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 32,
+    "kpi_score_pct": 80.0
+  },
+  {
+    "symbol": "AMZN",
+    "ebit_margin_trend": "stable",
+    "revenue_trend": "accel",
+    "analyst_buy_pct": 85.9,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 8,
+      "revenue_trend": 10,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 32,
+    "kpi_score_pct": 80.0
+  },
+  {
+    "symbol": "META",
+    "ebit_margin_trend": "expanding",
+    "revenue_trend": "stable",
+    "analyst_buy_pct": 79.6,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 12,
+      "revenue_trend": 6,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 32,
+    "kpi_score_pct": 80.0
+  },
+  {
+    "symbol": "AAPL",
+    "ebit_margin_trend": "stable",
+    "revenue_trend": "stable",
+    "analyst_buy_pct": 73.2,
+    "analyst_consensus": "StrongBuy",
+    "roe_trend": "stable",
+    "eps_revision": "no_change",
+    "scores": {
+      "ebit_margin": 8,
+      "revenue_trend": 6,
+      "analyst_consensus": 8,
+      "roe_trend": 2,
+      "eps_revision": 2
+    },
+    "kpi_score": 26,
+    "kpi_score_pct": 65.0
+  },
+  {
+    "symbol": "NFLX",
+    "ebit_margin_trend": "stable",
+    "revenue_trend": "stable",
+    "analyst_buy_pct": 65.7,
+    "analyst_consensus": "Buy",
+    "roe_trend": "stable",
+    "eps_revision": "upward",
+    "scores": {
+      "ebit_margin": 8,
+      "revenue_trend": 6,
+      "analyst_consensus": 6,
+      "roe_trend": 2,
+      "eps_revision": 4
+    },
+    "kpi_score": 26,
+    "kpi_score_pct": 65.0
+  },
+  {
+    "symbol": "TSLA",
+    "ebit_margin_trend": "declining",
+    "revenue_trend": "decel 2+ qtrs",
+    "analyst_buy_pct": 45.5,
+    "analyst_consensus": "Hold",
+    "roe_trend": "stable",
+    "eps_revision": "no_change",
+    "scores": {
+      "ebit_margin": 4,
+      "revenue_trend": 0,
+      "analyst_consensus": 3,
+      "roe_trend": 2,
+      "eps_revision": 2
+    },
+    "kpi_score": 11,
+    "kpi_score_pct": 27.5
+  }
+]

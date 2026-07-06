@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peter Lynch Stock Analyser</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- Chart.js for visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 3v18h18"/>
+                    <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                </svg>
+                <h1>IT Lynch Agent <span>v1.0</span></h1>
+            </div>
+            <p class="subtitle">Google ADK + Alpha Vantage Quantitative Equity Analyser</p>
+        </header>
+
+        <!-- Main Dashboard Layout -->
+        <main class="dashboard-grid">
+            <!-- Sidebar Controls -->
+            <section class="card controls-card">
+                <h2>Analysis Control Panel</h2>
+                <p class="instruction-text">Select a NASDAQ stock from the universe below to trigger the quantitative analyser agent.</p>
+                
+                <div class="form-group">
+                    <label for="stock-select">Choose Stock Ticker</label>
+                    <div class="select-wrapper">
+                        <select id="stock-select">
+                            <option value="NVDA">NVIDIA Corporation (NVDA) - Fast Grower</option>
+                            <option value="META">Meta Platforms, Inc. (META) - Stalwart</option>
+                            <option value="GOOGL">Alphabet Inc. (GOOGL) - Stalwart</option>
+                            <option value="AMZN">Amazon.com, Inc. (AMZN) - Stalwart</option>
+                            <option value="NFLX">Netflix, Inc. (NFLX) - Stalwart</option>
+                            <option value="AAPL">Apple Inc. (AAPL) - Slow Grower</option>
+                            <option value="MSFT">Microsoft Corporation (MSFT) - Stalwart</option>
+                            <option value="TSLA">Tesla, Inc. (TSLA) - Stalwart</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button id="analyze-btn" class="btn btn-primary">
+                    <span class="btn-text">Run Quant Analysis</span>
+                    <span class="spinner hidden"></span>
+                </button>
+
+                <button id="analyze-kpi-btn" class="btn btn-secondary" style="margin-top: 10px; background: linear-gradient(135deg, var(--accent-emerald) 0%, #047857 100%); color: white; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.25);">
+                    <span class="btn-text">Run KPI Analysis</span>
+                    <span class="spinner hidden"></span>
+                </button>
+
+                <div class="api-note">
+                    <span class="dot"></span>
+                    <span class="text">Local Cache Enabled (Fast & Offline-friendly)</span>
+                </div>
+            </section>
+
+            <!-- Main Results Area -->
+            <section class="main-display">
+                <!-- Tab Headers -->
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="analysis-tab">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10 9 9 9 8 9"/>
+                        </svg>
+                        Analysis Report
+                    </button>
+                    <button class="tab-btn" data-tab="kpi-tab" id="load-kpi-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+                            <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+                        </svg>
+                        KPI Report
+                    </button>
+                    <button class="tab-btn" data-tab="rankings-tab" id="load-rankings-btn">
+                        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="9"/>
+                            <rect x="14" y="3" width="7" height="5"/>
+                            <rect x="14" y="12" width="7" height="9"/>
+                            <rect x="3" y="16" width="7" height="5"/>
+                        </svg>
+                        Universe Leaderboard
+                    </button>
+                </div>
+
+                <!-- Tab Body: Analysis Report -->
+                <div class="tab-content active" id="analysis-tab">
+                    <!-- Placeholder State -->
+                    <div class="placeholder-state" id="report-placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <h3>No Active Analysis</h3>
+                        <p>Select a stock and click "Run Quant Analysis" to generate the interactive report.</p>
+                    </div>
+
+                    <!-- Report Content (Hidden initially) -->
+                    <div class="report-container hidden" id="report-content">
+                        <!-- Score Dashboard Row -->
+                        <div class="score-dashboard">
+                            <!-- Overall Score Card -->
+                            <div class="card score-card">
+                                <h3>Lynch Score</h3>
+                                <div class="score-display">
+                                    <span class="current-score" id="res-score">0</span>
+                                    <span class="max-score">/60</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="res-bar-fill"></div>
+                                </div>
+                                <p class="score-context" id="res-verdict">Evaluating...</p>
+                            </div>
+
+                            <!-- Classification Card -->
+                            <div class="card category-card">
+                                <h3>Lynch Classification</h3>
+                                <div class="badge-display">
+                                    <span class="category-badge" id="res-category">Fast Grower</span>
+                                </div>
+                                <div class="classification-details">
+                                    <p id="res-symbol-display">Ticker: AAPL</p>
+                                    <p id="res-price-display">Current Price: $0.00</p>
+                                    <p id="res-pe-display">Current P/E: 0.0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart and Breakdown -->
+                        <div class="report-details-grid">
+                            <!-- Chart Card -->
+                            <div class="card chart-card">
+                                <h3>Metric Scores Visualization</h3>
+                                <div class="chart-container">
+                                    <canvas id="scores-chart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Table Card -->
+                            <div class="card table-card">
+                                <h3>Quantitative Metrics Breakdown</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Lynch Metric</th>
+                                                <th>Actual Value</th>
+                                                <th>Score</th>
+                                                <th>Max</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>PEG Ratio</td>
+                                                <td id="val-peg">0.0</td>
+                                                <td class="td-score" id="score-peg">0</td>
+                                                <td>15</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Long-term Debt / Equity</td>
+                                                <td id="val-de">0.0</td>
+                                                <td class="td-score" id="score-de">0</td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5-Year Revenue CAGR</td>
+                                                <td id="val-cagr">0.0%</td>
+                                                <td class="td-score" id="score-cagr">0</td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Current P/E vs 5yr Median P/E</td>
+                                                <td id="val-pe-vs">0.0 / 0.0</td>
+                                                <td class="td-score" id="score-pe-vs">0</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Net Cash % of Market Cap</td>
+                                                <td id="val-netcash">0.0%</td>
+                                                <td class="td-score" id="score-netcash">0</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Free Cash Flow Conversion</td>
+                                                <td id="val-fcf">0.0%</td>
+                                                <td class="td-score" id="score-fcf">0</td>
+                                                <td>5</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Body: KPI Report -->
+                <div class="tab-content" id="kpi-tab">
+                    <!-- Placeholder State -->
+                    <div class="placeholder-state" id="kpi-placeholder">
+                        <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="12" y1="8" x2="12" y2="12"/>
+                            <line x1="12" y1="16" x2="12.01" y2="16"/>
+                        </svg>
+                        <h3>No Active KPI Analysis</h3>
+                        <p>Select a stock and click "Run KPI Analysis" to generate the interactive KPI report.</p>
+                    </div>
+
+                    <!-- KPI Report Content (Hidden initially) -->
+                    <div class="report-container hidden" id="kpi-content">
+                        <!-- Score Dashboard Row -->
+                        <div class="score-dashboard">
+                            <!-- Overall Score Card -->
+                            <div class="card score-card" style="border-left-color: var(--accent-emerald);">
+                                <h3>KPI Score</h3>
+                                <div class="score-display">
+                                    <span class="current-score" id="kpi-res-score">0</span>
+                                    <span class="max-score">/40</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="kpi-res-bar-fill" style="background: linear-gradient(90deg, var(--accent-emerald), #059669);"></div>
+                                </div>
+                                <p class="score-context" id="kpi-res-verdict">Evaluating...</p>
+                            </div>
+
+                            <!-- Classification Card -->
+                            <div class="card category-card" style="border-left-color: var(--accent-cyan);">
+                                <h3>KPI Status Summary</h3>
+                                <div class="classification-details">
+                                    <p id="kpi-symbol-display">Ticker: AAPL</p>
+                                    <p id="kpi-margin-display">EBIT Margin Trend: Stable</p>
+                                    <p id="kpi-consensus-display">Analyst Consensus: Buy</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart and Breakdown -->
+                        <div class="report-details-grid">
+                            <!-- Chart Card -->
+                            <div class="card chart-card">
+                                <h3>KPI Scores Visualization</h3>
+                                <div class="chart-container">
+                                    <canvas id="kpi-scores-chart"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Table Card -->
+                            <div class="card table-card">
+                                <h3>IT KPI Metrics Breakdown</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>KPI Metric</th>
+                                                <th>Actual Value</th>
+                                                <th>Score</th>
+                                                <th>Max</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>EBIT Margin Trend (4Q)</td>
+                                                <td id="kpi-val-ebit">Stable</td>
+                                                <td class="td-score" id="kpi-score-ebit" style="color: var(--accent-emerald);">0</td>
+                                                <td>12</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Revenue Growth Trend (4Q)</td>
+                                                <td id="kpi-val-rev">Stable</td>
+                                                <td class="td-score" id="kpi-score-rev" style="color: var(--accent-emerald);">0</td>
+                                                <td>10</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Analyst Consensus</td>
+                                                <td id="kpi-val-consensus">0.0% Buy</td>
+                                                <td class="td-score" id="kpi-score-consensus" style="color: var(--accent-emerald);">0</td>
+                                                <td>8</td>
+                                            </tr>
+                                            <tr>
+                                                <td>ROE Trend (3yr)</td>
+                                                <td id="kpi-val-roe">0.0%</td>
+                                                <td class="td-score" id="kpi-score-roe" style="color: var(--accent-emerald);">0</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>EPS Estimate Direction</td>
+                                                <td id="kpi-val-eps">No change</td>
+                                                <td class="td-score" id="kpi-score-eps" style="color: var(--accent-emerald);">0</td>
+                                                <td>4</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab Body: Rankings -->
+                <div class="tab-content" id="rankings-tab">
+                    <div class="card full-width-card">
+                        <div class="card-header">
+                            <h2>NASDAQ Universe Leaderboard</h2>
+                            <p>Sorted by overall Peter Lynch composite score (max 100 points).</p>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="rankings-table">
+                                <thead>
+                                    <tr>
+                                        <th>Rank</th>
+                                        <th>Symbol</th>
+                                        <th>Lynch Category</th>
+                                        <th>Quant Score (60)</th>
+                                        <th>KPI Score (40)</th>
+                                        <th>Composite Score (100)</th>
+                                        <th>Verdict</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="rankings-table-body">
+                                    <!-- Dynamic rows loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 IT Lynch Agent. Demonstration of Google Agent Development Kit (ADK) & Alpha Vantage Integration.</p>
+            <p class="disclaimer">Disclaimer: Prototype demonstration only. Not investment advice.</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

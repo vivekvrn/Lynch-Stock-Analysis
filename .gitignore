@@ -1,0 +1,27 @@
+# Secrets and environment configurations
+.env
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Local data API cache (prevents committing large cached JSON responses)
+data/cache/
+
+# IDE configurations
+.vscode/
+.idea/
+.project
+.pydevproject
+.settings/
+
+# OS specific files
+.DS_Store
+Thumbs.db
